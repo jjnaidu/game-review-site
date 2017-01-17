@@ -1,0 +1,15 @@
+<h1>Welcome, <%= @user.first_name %>!</h1>
+<a href="/">Home</a>
+<form action="/logout" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log Out">
+</form>
+
+<!-- <h2>Your channels:</h2>
+<ul>
+  <% if @channels %>
+    <% @channels.each do |channel| %>
+      <li><a href="/channels/<%= channel.id %>"><%= channel.name %></a></li>
+    <% end %>
+  <% end %>
+</ul> -->
