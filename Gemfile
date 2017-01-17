@@ -13,7 +13,11 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 
+gem 'igdb'
+gem 'unirest'
+
 gem 'rake'
+gem 'bcrypt'
 
 gem 'shotgun'
 
