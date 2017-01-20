@@ -17,6 +17,5 @@ end
 
 get '/users/:id' do
   @user = current_user
-  # @channels = @user.channels
   erb :'/users/profile'
 end
