@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :favorites
-  has_many :games
+  has_many :games, through: :favorites
   has_many :reviews
 
   validates :email, presence: true, uniqueness: true

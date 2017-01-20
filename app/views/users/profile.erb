@@ -5,11 +5,9 @@
   <input type="submit" value="Log Out">
 </form>
 
-<!-- <h2>Your channels:</h2>
+<h2>Your favorite games:</h2>
 <ul>
-  <% if @channels %>
-    <% @channels.each do |channel| %>
-      <li><a href="/channels/<%= channel.id %>"><%= channel.name %></a></li>
-    <% end %>
+  <% @user.games.each do |game| %>
+    <li><a href="/games/<%= game.id %>"><%= game.name %></a></li>
   <% end %>
-</ul> -->
+</ul>
