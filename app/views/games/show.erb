@@ -1,2 +1,30 @@
 <h2><%= @game.name %></h2>
-<p>Rating: <%= @game.rating %></p>
+<p>Critic Rating: <%= @game.rating %></p>
+<% if @game.aggregate_rating %>
+  <p>Aggregate Rating: <%= @game.aggregate_rating %></p>
+<% end %>
+
+<form action="/favorites" method="post">
+  <input type="hidden" name="favorite[game_id]" value="<%= @game.id %>">
+  <input type="hidden" name="favorite[user_id]" value="<%= current_user.id %>">
+  <input type="submit" value="Add to favorites" />
+</form>
+
+<h4>User Reviews:</h4>
+<div class="review-container">
+  <% @reviews.each do |review| %>
+    <p><%= review.description %></p>
+    <p>Score: <%= review.user_rating %></p>
+    <p>- <%= review.user.email %></p>
+  <% end %>
+</div>
+
+<% unless @reviewed %>
+  <form action="/reviews" method="post">
+    <textarea name="review[description]"></textarea><br />
+    <input type="text" name="review[user_rating]" /><br />
+    <input type="hidden" name="review[game_id]" value="<%= @game.id %>">
+    <input type="hidden" name="review[user_id]" value="<%= current_user.id %>">
+    <input type="submit" value="Add Review" />
+  </form>
+<% end %>
