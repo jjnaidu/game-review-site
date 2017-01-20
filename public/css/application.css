@@ -1,3 +1,7 @@
+body {
+  background-color: beige;
+}
+
 .links {
   text-align: right;
   float: right;
