@@ -1,0 +1,13 @@
+.links {
+  text-align: right;
+  float: right;
+  margin-right: 10px;
+}
+
+.container {
+  margin: 25px;
+}
+
+.game-list-item {
+  padding: 10px;
+}

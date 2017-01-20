@@ -16,7 +16,7 @@ post '/login' do
   end
 end
 
-delete '/logout' do
+get '/logout' do
   logout
   redirect '/'
 end
