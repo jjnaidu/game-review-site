@@ -1,0 +1,7 @@
+<h4>Search results:</h4>
+
+<ul class="game-list">
+  <% @games.each do |game| %>
+    <li class="game-list-item"><a href="/games/<%= game.id %>"><%= game.name %></a></li>
+  <% end %>
+</ul>

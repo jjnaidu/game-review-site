@@ -1,0 +1,8 @@
+<h1>Welcome, <%= @user.first_name %>!</h1>
+
+<h2>Your favorite games:</h2>
+<ul>
+  <% @user.games.each do |game| %>
+    <li><a href="/games/<%= game.id %>"><%= game.name %></a></li>
+  <% end %>
+</ul>
