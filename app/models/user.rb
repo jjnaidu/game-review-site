@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :favorites
   has_many :games, through: :favorites
+  has_many :reviews
 
   validates :email, presence: true, uniqueness: true
   validates :hashed_password, presence: true
